@@ -27,14 +27,16 @@ export function Phase1Scrape({
   onNext: () => void;
   onPrev?: () => void;
 }) {
-  const [input, setInput] = useState<ScrapeInput>({ niche: "Dentist", city: "Bandra, Mumbai", count: 12 });
+  const [input, setInput] = useState<ScrapeInput>({ niche: "Dentist", city: "Delhi", count: 12 });
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [activeLeadId, setActiveLeadId] = useState<string | null>(null);
+  const [scrapeSource, setScrapeSource] = useState<string | null>(null);
 
   async function runScrape() {
     setLoading(true);
     setLeads([]);
+    setScrapeSource(null);
     try {
       const res = await fetch("/api/scrape", {
         method: "POST",
@@ -43,11 +45,16 @@ export function Phase1Scrape({
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Scrape failed");
+      setScrapeSource(data.source);
       for (let i = 0; i < data.leads.length; i++) {
         await new Promise((r) => setTimeout(r, 60));
         setLeads(data.leads.slice(0, i + 1));
       }
-      toast.success(`${data.leads.length} leads scraped from ${input.city}`);
+      if (data.source === "seed" || data.source === "seed-fallback") {
+        toast.info(`Generated seed leads for ${input.city} (Add APIFY_TOKEN for live scraping)`);
+      } else {
+        toast.success(`Scraped ${data.leads.length} live leads from ${input.city}`);
+      }
     } catch (e) {
       toast.error((e as Error).message);
     } finally {
@@ -192,6 +199,16 @@ export function Phase1Scrape({
           </div>
         </CardHeader>
         <CardContent className="pt-4">
+          {scrapeSource && (scrapeSource === "seed" || scrapeSource === "seed-fallback") && (
+            <div className="mb-4 bg-amber-500/10 border border-amber-500/30 text-amber-300 rounded-xl p-3 text-xs flex items-center justify-between gap-2">
+              <span>
+                <strong>Offline Demo Mode:</strong> <code className="bg-black/30 px-1.5 py-0.5 rounded font-mono text-[11px]">APIFY_TOKEN</code> is not set. Showing simulated leads for <strong>{input.city}</strong> ({input.niche}). Add an Apify token to scrape live Google Maps data.
+              </span>
+              <Badge variant="outline" className="border-amber-500/40 text-amber-300 text-[10px] shrink-0 font-mono">
+                Offline Seed Data
+              </Badge>
+            </div>
+          )}
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>

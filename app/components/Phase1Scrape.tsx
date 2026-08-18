@@ -43,10 +43,16 @@ export function Phase1Scrape({
         headers: { "content-type": "application/json" },
         body: JSON.stringify(input),
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? "Scrape failed");
+      const rawText = await res.text();
+      let data: any = {};
+      try {
+        data = JSON.parse(rawText);
+      } catch {
+        throw new Error(`Server returned status ${res.status}. Please try again.`);
+      }
+      if (!res.ok) throw new Error(data.error ?? `Scrape failed (${res.status})`);
       setScrapeSource(data.source);
-      for (let i = 0; i < data.leads.length; i++) {
+      for (let i = 0; i < (data.leads?.length ?? 0); i++) {
         await new Promise((r) => setTimeout(r, 60));
         setLeads(data.leads.slice(0, i + 1));
       }

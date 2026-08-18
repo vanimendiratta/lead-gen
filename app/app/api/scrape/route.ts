@@ -138,11 +138,15 @@ async function loadSeed(input: ScrapeInput): Promise<{ leads: Lead[] }> {
   return { leads: adapted };
 }
 
+export const maxDuration = 60;
+
 export async function POST(req: Request) {
   const input = (await req.json()) as ScrapeInput;
 
+  const token = process.env.APIFY_TOKEN;
+
   // No token = serve cached seed adapted to requested city/niche
-  if (!APIFY_TOKEN) {
+  if (!token) {
     const { leads } = await loadSeed(input);
     const sliced = leads.slice(0, Math.max(1, Math.min(input.count, leads.length)));
     return NextResponse.json({ source: "seed", leads: sliced });
@@ -150,7 +154,7 @@ export async function POST(req: Request) {
 
   try {
     const runRes = await fetch(
-      `https://api.apify.com/v2/acts/${APIFY_ACTOR}/run-sync-get-dataset-items?token=${APIFY_TOKEN}`,
+      `https://api.apify.com/v2/acts/${APIFY_ACTOR}/run-sync-get-dataset-items?token=${token}`,
       {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -159,9 +163,10 @@ export async function POST(req: Request) {
           maxCrawledPlacesPerSearch: input.count,
           language: "en",
         }),
+        signal: AbortSignal.timeout(8500),
       },
     );
-    if (!runRes.ok) throw new Error(`Apify ${runRes.status}`);
+    if (!runRes.ok) throw new Error(`Apify response status ${runRes.status}`);
     const items = (await runRes.json()) as Array<Record<string, unknown>>;
 
     const leads: Lead[] = items.slice(0, input.count).map((it, i) => ({
@@ -184,7 +189,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ source: "apify", leads });
   } catch (e) {
     const { leads } = await loadSeed(input);
-    return NextResponse.json({ source: "seed-fallback", error: (e as Error).message, leads: leads.slice(0, input.count) });
+    return NextResponse.json({
+      source: "seed-fallback",
+      error: (e as Error).message,
+      leads: leads.slice(0, input.count),
+    });
   }
 }
 

@@ -125,7 +125,7 @@ export function AuthPage({ onLogin }: AuthPageProps) {
             </div>
           </div>
           <h1 className="text-2xl font-display font-bold tracking-tight gradient-text-veev">
-            Lead → Launch Studio
+            FalconOps Studio
           </h1>
           <p className="text-xs text-muted-foreground font-mono">
             Powered by VEEV AI Intelligence Pipeline

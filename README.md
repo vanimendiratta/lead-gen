@@ -1,4 +1,4 @@
-# Lead → Launch
+# FalconOps
 
 Local-first dashboard + Claude Code skill that runs a 5-phase freelance website pipeline:
 

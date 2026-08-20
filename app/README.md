@@ -1,6 +1,6 @@
-# Lead → Launch (app)
+# FalconOps (app)
 
-Next.js 16 dashboard for the Lead → Launch pipeline: **Scrape → Audit → Rank → Build → Outreach**.
+Next.js 16 dashboard for the FalconOps pipeline: **Scrape → Audit → Rank → Build → Outreach**.
 
 > Setup and full usage instructions live in the package root: **`../SETUP-GUIDE.md`**.
 > Non-coders: just double-click **`../Launch.command`** (Mac) or **`../Launch.bat`** (Windows).

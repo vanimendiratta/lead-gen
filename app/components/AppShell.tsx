@@ -102,7 +102,7 @@ export function AppShell({
                 className="flex flex-col whitespace-nowrap"
               >
                 <span className="font-display font-bold text-base tracking-tight gradient-text-veev">
-                  Lead → Launch
+                  FalconOps
                 </span>
                 <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-mono">
                   Command Center
@@ -315,7 +315,7 @@ export function AppShell({
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between border-b border-sidebar-border/60 pb-3">
-                <div className="font-bold text-base gradient-text-veev">Lead → Launch Studio</div>
+                <div className="font-bold text-base gradient-text-veev">FalconOps Studio</div>
                 <button onClick={() => setMobileMenuOpen(false)} className="text-muted-foreground">
                   <X className="h-5 w-5" />
                 </button>

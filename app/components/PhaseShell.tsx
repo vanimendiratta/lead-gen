@@ -55,7 +55,7 @@ export function PhaseShell({
               size="sm"
               onClick={onNext}
               disabled={nextDisabled}
-              className="h-9 px-4 text-xs font-mono font-bold bg-gradient-to-r from-sky-400 via-cyan-500 to-blue-600 hover:from-sky-300 hover:to-blue-500 text-slate-950 shadow-md shadow-cyan-950/30"
+              className="h-9 px-4 text-xs font-mono font-bold bg-amber-400 hover:bg-amber-300 text-slate-950 shadow-md shadow-amber-950/30"
             >
               {nextLabel} <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
             </Button>

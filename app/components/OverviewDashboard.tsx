@@ -111,19 +111,19 @@ export function OverviewDashboard({
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        className="glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden border border-cyan-500/30 shadow-2xl shadow-cyan-950/20"
+        className="glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden border border-amber-500/30 shadow-2xl shadow-amber-950/20"
       >
-        <div className="absolute -right-16 -top-16 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
-        <div className="absolute -left-16 -bottom-16 h-72 w-72 rounded-full bg-blue-600/10 blur-3xl pointer-events-none" />
+        <div className="absolute -right-16 -top-16 h-72 w-72 rounded-full bg-amber-500/10 blur-3xl pointer-events-none" />
+        <div className="absolute -left-16 -bottom-16 h-72 w-72 rounded-full bg-orange-600/10 blur-3xl pointer-events-none" />
 
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono">
               <Zap className="h-3.5 w-3.5" />
-              <span>AI Growth Command Center</span>
+              <span>CARGOX Growth Command Center</span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-              Your Pipeline, Powered by <span className="gradient-text-veev">AI Intelligence.</span>
+              Your Pipeline, Powered by <span className="gradient-text-cargox">AI Intelligence.</span>
             </h1>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
               Discover local businesses, diagnose website gaps, rank high-intent opportunities,
@@ -134,7 +134,7 @@ export function OverviewDashboard({
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <button
               onClick={() => onNavigatePhase(1)}
-              className="px-5 py-3 rounded-xl bg-gradient-to-r from-sky-400 via-cyan-500 to-blue-600 hover:from-sky-300 hover:to-blue-500 text-slate-950 font-bold text-xs font-mono shadow-lg shadow-cyan-950/40 transition-all duration-200 active:scale-95 flex items-center gap-2"
+              className="px-5 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs font-mono shadow-lg shadow-amber-950/40 transition-all duration-200 active:scale-95 flex items-center gap-2"
             >
               <span>{leads.length === 0 ? "Launch Scraper Pipeline" : "Continue Pipeline"}</span>
               <ArrowRight className="h-4 w-4" />

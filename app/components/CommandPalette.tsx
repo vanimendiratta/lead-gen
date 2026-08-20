@@ -97,7 +97,7 @@ export function CommandPalette({
                     }}
                     className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-colors text-left"
                   >
-                    <Icon className="h-4 w-4 text-cyan-400 shrink-0" />
+                    <Icon className="h-4 w-4 text-amber-400 shrink-0" />
                     <span>{cmd.label}</span>
                   </button>
                 );
@@ -125,7 +125,7 @@ export function CommandPalette({
                       <span className="font-semibold text-foreground">{lead.name}</span>
                       <span className="text-[10px] text-muted-foreground ml-2">({lead.category})</span>
                     </div>
-                    <span className="text-[10px] text-cyan-400 font-mono shrink-0">
+                    <span className="text-[10px] text-amber-400 font-mono shrink-0">
                       {lead.rating}★ ({lead.reviewsCount})
                     </span>
                   </button>

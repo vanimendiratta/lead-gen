@@ -50,55 +50,57 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   /* 
-   * VEEV Color Palette System
-   * - Veev Deep Royal Navy:  #0A2540 / oklch(0.12 0.06 255)
-   * - Veev Ocean Blue:       #0077B6 / oklch(0.55 0.18 235)
-   * - Veev Electric Cyan:    #00B4D8 / oklch(0.68 0.19 220)
-   * - Veev Ice Aqua:         #48CAE4 / oklch(0.78 0.16 200)
-   * - Veev Pure Star White:  #FFFFFF
+   * CARGOX Logistics Color Palette System
+   * - Golden Yellow Accent:   #FFDA00 / oklch(0.88 0.21 95)
+   * - Dark Deep Slate:        #0A1F2B / oklch(0.16 0.04 230)
+   * - Body Dark Charcoal:     #111111 / oklch(0.12 0.01 250)
+   * - Warm Sunset Coral:      #EA7C58 / oklch(0.66 0.17 38)
+   * - Warm Sunset Amber:      #F0B172 / oklch(0.77 0.12 65)
+   * - Steel Blue Accent:      #6682C2 / oklch(0.60 0.12 255)
+   * - Deep Dark Contrast:     #002A35 / oklch(0.14 0.05 200)
    */
-  --background: oklch(0.11 0.04 255);
-  --foreground: oklch(0.96 0.005 220);
+  --background: oklch(0.12 0.01 250);
+  --foreground: oklch(0.96 0.005 90);
 
-  --card: oklch(0.14 0.04 255);
-  --card-foreground: oklch(0.96 0.005 220);
+  --card: oklch(0.16 0.04 230);
+  --card-foreground: oklch(0.96 0.005 90);
 
-  --popover: oklch(0.14 0.04 255);
-  --popover-foreground: oklch(0.96 0.005 220);
+  --popover: oklch(0.16 0.04 230);
+  --popover-foreground: oklch(0.96 0.005 90);
 
-  --primary: oklch(0.68 0.19 220);               /* Veev Electric Cyan */
-  --primary-foreground: oklch(0.10 0.05 255);
+  --primary: oklch(0.88 0.21 95);                /* CARGOX Golden Yellow #FFDA00 */
+  --primary-foreground: oklch(0.14 0.05 200);     /* Dark Contrast #002A35 */
 
-  --secondary: oklch(0.18 0.04 250);
-  --secondary-foreground: oklch(0.92 0.01 220);
+  --secondary: oklch(0.20 0.04 230);
+  --secondary-foreground: oklch(0.92 0.01 90);
 
-  --muted: oklch(0.18 0.03 250);
-  --muted-foreground: oklch(0.64 0.03 230);
+  --muted: oklch(0.20 0.03 230);
+  --muted-foreground: oklch(0.76 0.01 220);      /* #B0B8BC Muted Steel */
 
-  --accent: oklch(0.78 0.16 200);                /* Veev Ice Aqua */
-  --accent-foreground: oklch(0.10 0.05 255);
+  --accent: oklch(0.66 0.17 38);                 /* #EA7C58 Sunset Coral */
+  --accent-foreground: oklch(0.98 0 0);
 
   --destructive: oklch(0.62 0.20 25);            /* Coral Red */
 
-  --border: oklch(0.24 0.05 240 / 0.7);
-  --input: oklch(0.24 0.05 240 / 0.7);
-  --ring: oklch(0.68 0.19 220 / 0.5);
+  --border: oklch(0.28 0.05 230 / 0.7);
+  --input: oklch(0.28 0.05 230 / 0.7);
+  --ring: oklch(0.88 0.21 95 / 0.5);
 
-  --sidebar: oklch(0.09 0.04 255);
-  --sidebar-foreground: oklch(0.90 0.01 220);
-  --sidebar-primary: oklch(0.68 0.19 220);
-  --sidebar-primary-foreground: oklch(0.10 0.05 255);
-  --sidebar-accent: oklch(0.16 0.04 250);
-  --sidebar-accent-foreground: oklch(0.96 0.005 220);
-  --sidebar-border: oklch(0.18 0.04 250 / 0.7);
-  --sidebar-ring: oklch(0.68 0.19 220 / 0.5);
+  --sidebar: oklch(0.10 0.02 240);
+  --sidebar-foreground: oklch(0.92 0.01 90);
+  --sidebar-primary: oklch(0.88 0.21 95);
+  --sidebar-primary-foreground: oklch(0.14 0.05 200);
+  --sidebar-accent: oklch(0.18 0.04 230);
+  --sidebar-accent-foreground: oklch(0.96 0.005 90);
+  --sidebar-border: oklch(0.22 0.04 230 / 0.7);
+  --sidebar-ring: oklch(0.88 0.21 95 / 0.5);
 
-  /* Semantic Phase Accents based on VEEV Gradient Spectrum */
-  --phase-discover: oklch(0.78 0.16 200);       /* Ice Aqua Cyan */
-  --phase-audit: oklch(0.68 0.19 220);          /* Electric Ocean Blue */
-  --phase-rank: oklch(0.60 0.18 240);           /* Veev Royal Blue */
-  --phase-build: oklch(0.65 0.18 260);          /* Sapphire Indigo */
-  --phase-outreach: oklch(0.75 0.15 190);        /* Bright Sky Teal */
+  /* Semantic Phase Accents based on CARGOX Spectrum */
+  --phase-discover: oklch(0.88 0.21 95);        /* Golden Yellow */
+  --phase-audit: oklch(0.77 0.12 65);           /* Sunset Amber */
+  --phase-rank: oklch(0.66 0.17 38);            /* Sunset Coral */
+  --phase-build: oklch(0.60 0.12 255);          /* Steel Blue */
+  --phase-outreach: oklch(0.76 0.14 80);        /* Warm Gold */
 
   --radius: 0.75rem;
 }
@@ -112,9 +114,9 @@
     @apply bg-background text-foreground min-h-screen antialiased selection:bg-primary/20 selection:text-primary;
     background-color: var(--background);
     background-image:
-      radial-gradient(ellipse at 50% 0%, oklch(0.25 0.08 230 / 0.22) 0%, transparent 65%),
-      radial-gradient(circle at 90% 20%, oklch(0.22 0.08 210 / 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 10% 80%, oklch(0.18 0.06 250 / 0.12) 0%, transparent 50%);
+      radial-gradient(ellipse at 50% 0%, oklch(0.24 0.08 95 / 0.18) 0%, transparent 65%),
+      radial-gradient(circle at 90% 20%, oklch(0.22 0.08 65 / 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 10% 80%, oklch(0.20 0.06 240 / 0.12) 0%, transparent 50%);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
@@ -137,11 +139,11 @@
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: oklch(0.25 0.04 240);
+    background: oklch(0.28 0.04 230);
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: oklch(0.35 0.05 230);
+    background: oklch(0.38 0.05 95);
   }
 }
 
@@ -149,52 +151,57 @@
 .bg-digital-mesh {
   background-size: 32px 32px;
   background-image:
-    linear-gradient(to right, oklch(0.30 0.04 230 / 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0.30 0.04 230 / 0.07) 1px, transparent 1px);
+    linear-gradient(to right, oklch(0.35 0.04 95 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.35 0.04 95 / 0.06) 1px, transparent 1px);
+}
+
+/* CARGOX Sunset Card Background */
+.bg-cargox-sunset {
+  background: linear-gradient(180deg, #C8C7B3 0%, #F0B172 50%, #EA7C58 100%);
 }
 
 /* Glassmorphism & Ambient Lighting */
 .glass-panel {
-  background: oklch(0.13 0.04 255 / 0.78);
+  background: oklch(0.16 0.04 230 / 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid oklch(0.25 0.05 240 / 0.6);
+  border: 1px solid oklch(0.28 0.05 230 / 0.6);
 }
 
 .glass-card {
-  background: linear-gradient(135deg, oklch(0.16 0.04 250 / 0.88), oklch(0.12 0.03 255 / 0.75));
+  background: linear-gradient(135deg, oklch(0.18 0.04 230 / 0.90), oklch(0.14 0.03 240 / 0.80));
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid oklch(0.25 0.05 230 / 0.6);
+  border: 1px solid oklch(0.30 0.06 95 / 0.4);
 }
 
-.glow-emerald, .glow-cyan {
-  box-shadow: 0 0 25px -4px oklch(0.68 0.19 220 / 0.35);
+.glow-emerald, .glow-cyan, .glow-yellow {
+  box-shadow: 0 0 25px -4px oklch(0.88 0.21 95 / 0.4);
 }
 
-.glow-indigo, .glow-blue {
-  box-shadow: 0 0 25px -4px oklch(0.55 0.18 235 / 0.35);
+.glow-indigo, .glow-blue, .glow-steel {
+  box-shadow: 0 0 25px -4px oklch(0.60 0.12 255 / 0.35);
 }
 
-.glow-amber {
-  box-shadow: 0 0 25px -4px oklch(0.78 0.16 200 / 0.35);
+.glow-amber, .glow-sunset {
+  box-shadow: 0 0 25px -4px oklch(0.66 0.17 38 / 0.4);
 }
 
-/* VEEV Gradient Text Accents */
-.gradient-text-emerald, .gradient-text-veev {
-  background: linear-gradient(135deg, #ffffff 10%, #48CAE4 50%, #00B4D8 100%);
+/* CARGOX Gradient Text Accents */
+.gradient-text-emerald, .gradient-text-veev, .gradient-text-cargox {
+  background: linear-gradient(135deg, #ffffff 10%, #FFDA00 55%, #F0B172 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gradient-text-indigo {
-  background: linear-gradient(135deg, #ffffff 10%, #00B4D8 50%, #0A2540 100%);
+.gradient-text-indigo, .gradient-text-sunset {
+  background: linear-gradient(135deg, #ffffff 10%, #F0B172 50%, #EA7C58 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gradient-text-amber {
-  background: linear-gradient(135deg, #ffffff 10%, #48CAE4 60%, #0077B6 100%);
+.gradient-text-amber, .gradient-text-gold {
+  background: linear-gradient(135deg, #ffffff 10%, #FFDA00 60%, #EAB308 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

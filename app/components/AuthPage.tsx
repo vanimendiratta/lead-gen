@@ -112,35 +112,32 @@ export function AuthPage({ onLogin }: AuthPageProps) {
       >
         {/* Header Logo Brand */}
         <div className="flex flex-col items-center justify-center text-center mb-6 space-y-2">
-          {/* VEEV Inspired Logo Mark Icon */}
-          <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-cyan-400 via-blue-600 to-slate-900 p-0.5 shadow-xl shadow-cyan-950/50">
-            <div className="h-full w-full bg-slate-950/80 backdrop-blur-md rounded-[14px] flex items-center justify-center relative overflow-hidden">
-              <div className="absolute -top-3 -right-3 h-8 w-8 bg-cyan-400/30 rounded-full blur-md" />
-              <div className="flex items-baseline font-display font-black text-xl tracking-tighter text-white">
-                <span className="text-cyan-400">v</span>
-                <span className="text-sky-300">e</span>
-                <span className="text-blue-500">e</span>
-                <span className="text-xs text-cyan-400 font-bold ml-0.5">v</span>
+          {/* CARGOX Inspired Logo Mark Icon */}
+          <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-amber-400 via-amber-500 to-slate-900 p-0.5 shadow-xl shadow-amber-950/50">
+            <div className="h-full w-full bg-slate-950/85 backdrop-blur-md rounded-[14px] flex items-center justify-center relative overflow-hidden">
+              <div className="absolute -top-3 -right-3 h-8 w-8 bg-amber-400/30 rounded-full blur-md" />
+              <div className="font-display font-black text-2xl tracking-tighter text-amber-400">
+                F<span className="text-white">O</span>
               </div>
             </div>
           </div>
-          <h1 className="text-2xl font-display font-bold tracking-tight gradient-text-veev">
+          <h1 className="text-2xl font-display font-bold tracking-tight gradient-text-cargox">
             FalconOps Studio
           </h1>
           <p className="text-xs text-muted-foreground font-mono">
-            Powered by VEEV AI Intelligence Pipeline
+            Powered by CARGOX Logistics & Growth Intelligence
           </p>
         </div>
 
         {/* Main Auth Card */}
-        <Card className="glass-card border border-cyan-500/30 rounded-3xl shadow-2xl overflow-hidden backdrop-blur-xl">
+        <Card className="glass-card border border-amber-500/30 rounded-3xl shadow-2xl overflow-hidden backdrop-blur-xl">
           {/* Top Switcher Tabs */}
           <div className="grid grid-cols-2 p-1.5 bg-secondary/50 border-b border-border/40">
             <button
               onClick={() => setMode("login")}
               className={`py-2.5 rounded-2xl text-xs font-semibold font-mono transition-all flex items-center justify-center gap-2 ${
                 mode === "login"
-                  ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm"
+                  ? "bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -150,7 +147,7 @@ export function AuthPage({ onLogin }: AuthPageProps) {
               onClick={() => setMode("signup")}
               className={`py-2.5 rounded-2xl text-xs font-semibold font-mono transition-all flex items-center justify-center gap-2 ${
                 mode === "signup"
-                  ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm"
+                  ? "bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -184,7 +181,7 @@ export function AuthPage({ onLogin }: AuthPageProps) {
                       placeholder="Sandeep Kumar"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="pl-9 h-11 bg-secondary/40 border-border/60 text-sm rounded-xl focus:border-cyan-500"
+                      className="pl-9 h-11 bg-secondary/40 border-border/60 text-sm rounded-xl focus:border-amber-400"
                     />
                   </div>
                 </div>
@@ -202,7 +199,7 @@ export function AuthPage({ onLogin }: AuthPageProps) {
                     placeholder="adminsandeep@gamil.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="pl-9 h-11 bg-secondary/40 border-border/60 text-sm rounded-xl focus:border-cyan-500"
+                    className="pl-9 h-11 bg-secondary/40 border-border/60 text-sm rounded-xl focus:border-amber-400"
                   />
                 </div>
               </div>
@@ -221,7 +218,7 @@ export function AuthPage({ onLogin }: AuthPageProps) {
                     placeholder="••••••••••••"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="pl-9 pr-10 h-11 bg-secondary/40 border-border/60 text-sm rounded-xl focus:border-cyan-500 font-mono"
+                    className="pl-9 pr-10 h-11 bg-secondary/40 border-border/60 text-sm rounded-xl focus:border-amber-400 font-mono"
                   />
                   <button
                     type="button"
@@ -236,7 +233,7 @@ export function AuthPage({ onLogin }: AuthPageProps) {
               <Button
                 type="submit"
                 disabled={loading}
-                className="w-full h-11 bg-gradient-to-r from-sky-400 via-cyan-500 to-blue-600 hover:from-sky-300 hover:to-blue-500 text-slate-950 font-bold rounded-xl shadow-lg shadow-cyan-950/40 transition-all active:scale-[0.98] mt-2"
+                className="w-full h-11 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold rounded-xl shadow-lg shadow-amber-950/40 transition-all active:scale-[0.98] mt-2"
               >
                 {loading ? (
                   "Authenticating..."
@@ -254,13 +251,13 @@ export function AuthPage({ onLogin }: AuthPageProps) {
               <button
                 type="button"
                 onClick={handleAutofillAdmin}
-                className="w-full py-2.5 px-3 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 text-xs font-mono flex items-center justify-between transition-colors group"
+                className="w-full py-2.5 px-3 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-mono flex items-center justify-between transition-colors group"
               >
                 <span className="flex items-center gap-2">
-                  <ShieldCheck className="h-4 w-4 text-cyan-400" />
+                  <ShieldCheck className="h-4 w-4 text-amber-400" />
                   Autofill Admin Credentials
                 </span>
-                <span className="text-[10px] text-cyan-400/80 group-hover:underline">Fill & Sign In</span>
+                <span className="text-[10px] text-amber-400/80 group-hover:underline">Fill & Sign In</span>
               </button>
             </div>
           </CardContent>

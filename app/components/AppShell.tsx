@@ -182,7 +182,7 @@ export function AppShell({
                   claudeOk === null
                     ? "bg-amber-400 animate-pulse"
                     : claudeOk
-                    ? "bg-cyan-400 shadow-sm shadow-cyan-400"
+                    ? "bg-amber-400 shadow-sm shadow-amber-400"
                     : "bg-destructive"
                 }`}
               />

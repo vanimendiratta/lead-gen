@@ -132,7 +132,7 @@ export function Phase4Build({
       nextLabel="Draft outreach →"
     >
       {/* Top Controls Bar */}
-      <div className="glass-card rounded-2xl p-5 border border-blue-500/30 mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="glass-card rounded-2xl p-5 border border-amber-500/30 mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">Target Prospect</div>
           <div className="font-display text-2xl font-bold text-foreground mt-0.5">{selected.name}</div>
@@ -158,7 +158,7 @@ export function Phase4Build({
           <Button
             onClick={generate}
             disabled={generating}
-            className="h-10 px-5 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-400 hover:to-indigo-500 text-blue-950 font-bold shadow-lg shadow-blue-950/20"
+            className="h-10 px-5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold shadow-lg shadow-amber-950/20"
           >
             <Wand2 className="h-4 w-4 mr-2" />
             {generating ? "Generating Prompt…" : prompt ? "Regenerate Prompt" : "Generate with Claude"}
@@ -179,20 +179,20 @@ export function Phase4Build({
         <Card className="glass-card border border-border/60 rounded-2xl shadow-xl flex flex-col">
           <CardHeader className="border-b border-border/40 pb-4 flex flex-row items-center justify-between">
             <CardTitle className="text-base font-bold flex items-center gap-2">
-              <Sparkles className="h-4 w-4 text-blue-400" />
+              <Sparkles className="h-4 w-4 text-amber-400" />
               Claude Builder Prompt
             </CardTitle>
             {prompt && (
               <div className="flex gap-2">
                 {isTyping && (
-                  <Button size="sm" variant="ghost" onClick={revealFullPrompt} className="h-8 text-xs font-mono text-blue-400">
+                  <Button size="sm" variant="ghost" onClick={revealFullPrompt} className="h-8 text-xs font-mono text-amber-400">
                     <Eye className="h-3.5 w-3.5 mr-1" /> Show Full
                   </Button>
                 )}
                 <Button size="sm" variant="outline" onClick={openPlatform} className="h-8 text-xs font-mono border-border">
                   <ExternalLink className="h-3.5 w-3.5 mr-1" /> Open {PLATFORMS.find((p) => p.id === platform)?.label}
                 </Button>
-                <Button size="sm" onClick={copyPrompt} className="h-8 text-xs font-mono bg-blue-500 hover:bg-blue-400 text-blue-950 font-bold">
+                <Button size="sm" onClick={copyPrompt} className="h-8 text-xs font-mono bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold">
                   <Copy className="h-3.5 w-3.5 mr-1" /> Copy Prompt
                 </Button>
               </div>
@@ -204,13 +204,13 @@ export function Phase4Build({
             ) : prompt ? (
               <pre className="text-xs leading-relaxed whitespace-pre-wrap font-mono bg-secondary/40 rounded-xl p-4 max-h-[500px] overflow-y-auto border border-border/60 text-muted-foreground flex-1 select-text">
                 {typed}
-                {isTyping && <span className="animate-pulse text-blue-400">▌</span>}
+                {isTyping && <span className="animate-pulse text-amber-400">▌</span>}
               </pre>
             ) : (
               <div className="h-[340px] flex flex-col items-center justify-center text-center gap-3 text-muted-foreground font-mono text-xs">
                 <Wand2 className="h-8 w-8 text-muted-foreground/50" />
                 <div className="max-w-xs">
-                  Pick a target platform and click <span className="text-blue-400 font-semibold">&ldquo;Generate with Claude&rdquo;</span> to create a complete site builder prompt.
+                  Pick a target platform and click <span className="text-amber-400 font-semibold">&ldquo;Generate with Claude&rdquo;</span> to create a complete site builder prompt.
                 </div>
               </div>
             )}
@@ -221,7 +221,7 @@ export function Phase4Build({
         <Card className="glass-card border border-border/60 rounded-2xl shadow-xl flex flex-col">
           <CardHeader className="border-b border-border/40 pb-4 flex flex-row items-center justify-between">
             <CardTitle className="text-base font-bold flex items-center gap-2">
-              <Monitor className="h-4 w-4 text-blue-400" />
+              <Monitor className="h-4 w-4 text-amber-400" />
               Live Site Demo Preview
             </CardTitle>
             <span className="text-xs font-mono text-muted-foreground">Browser Sandbox</span>
@@ -233,7 +233,7 @@ export function Phase4Build({
                 <div className="flex items-center gap-1.5">
                   <div className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
                   <div className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
-                  <div className="h-2.5 w-2.5 rounded-full bg-cyan-400/80" />
+                  <div className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
                 </div>
 
                 <div className="flex items-center gap-1.5 px-3 py-0.5 rounded-md bg-background/60 text-[10px] font-mono text-muted-foreground border border-border/40 max-w-xs truncate">
@@ -249,13 +249,13 @@ export function Phase4Build({
 
             {pitchPoints.length > 0 && (
               <div className="rounded-xl bg-secondary/40 p-4 border border-border/60 space-y-2">
-                <div className="text-[10px] font-mono uppercase tracking-wider text-blue-400">
+                <div className="text-[10px] font-mono uppercase tracking-wider text-amber-400">
                   Value Pitch Points for Business Owner
                 </div>
                 <ul className="space-y-1.5">
                   {pitchPoints.map((p, i) => (
                     <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground font-sans">
-                      <Check className="h-4 w-4 text-blue-400 mt-0.5 shrink-0" />
+                      <Check className="h-4 w-4 text-amber-400 mt-0.5 shrink-0" />
                       <span>{p}</span>
                     </li>
                   ))}

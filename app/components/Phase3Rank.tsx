@@ -90,7 +90,7 @@ export function Phase3Rank({
       nextLabel="Build website →"
     >
       {/* Top Action Bar */}
-      <div className="glass-card rounded-2xl p-4 border border-indigo-500/30 mb-6 flex flex-wrap items-center justify-between gap-4">
+      <div className="glass-card rounded-2xl p-4 border border-amber-500/30 mb-6 flex flex-wrap items-center justify-between gap-4">
         <div className="text-xs font-mono text-muted-foreground">
           {ranked.length > 0
             ? `${ranked.length} prospects scored and sorted by Claude`
@@ -100,7 +100,7 @@ export function Phase3Rank({
         <Button
           onClick={runRank}
           disabled={running}
-          className="h-10 px-5 bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-400 hover:to-violet-500 text-indigo-950 font-bold shadow-lg shadow-indigo-950/20"
+          className="h-10 px-5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold shadow-lg shadow-amber-950/20"
         >
           <Sparkles className="h-4 w-4 mr-2" />
           {running ? "Claude is ranking…" : ranked.length > 0 ? "Re-Rank with Claude" : "Rank Prospects with Claude"}
@@ -118,7 +118,7 @@ export function Phase3Rank({
       {ranked.length === 0 && !running && !notInstalled && (
         <Card className="glass-card border border-dashed border-border/80 rounded-2xl">
           <CardContent className="py-16 text-center space-y-3">
-            <div className="h-12 w-12 rounded-2xl bg-indigo-500/10 text-indigo-400 mx-auto flex items-center justify-center">
+            <div className="h-12 w-12 rounded-2xl bg-amber-500/10 text-amber-300 mx-auto flex items-center justify-center">
               <Trophy className="h-6 w-6" />
             </div>
             <div className="font-bold text-lg text-foreground">Ready for AI Qualification</div>
@@ -154,7 +154,7 @@ export function Phase3Rank({
                   }}
                   className={`glass-card h-full cursor-pointer transition-all duration-200 border rounded-2xl p-5 hover:-translate-y-1 ${
                     selectedId === lead.id
-                      ? "border-indigo-500/70 ring-1 ring-indigo-500/50 shadow-lg shadow-indigo-950/30"
+                      ? "border-amber-500/70 ring-1 ring-amber-500/50 shadow-lg shadow-amber-950/30"
                       : "border-border/60 hover:border-border"
                   }`}
                 >
@@ -172,7 +172,7 @@ export function Phase3Rank({
                       >
                         <Crown className="h-3 w-3 mr-1" /> Rank #{i + 1}
                       </Badge>
-                      <div className="font-display text-3xl font-bold text-indigo-400 tabular-nums">
+                      <div className="font-display text-3xl font-bold text-amber-300 tabular-nums">
                         {lead.score}
                       </div>
                     </div>
@@ -201,15 +201,15 @@ export function Phase3Rank({
                     <div className="flex items-center justify-between pt-1">
                       <div className="flex gap-2">
                         {lead.phone && <Phone className="h-3.5 w-3.5 text-muted-foreground" />}
-                        {lead.whatsapp && <MessageCircle className="h-3.5 w-3.5 text-cyan-400" />}
-                        {lead.email && <Mail className="h-3.5 w-3.5 text-indigo-400" />}
+                        {lead.whatsapp && <MessageCircle className="h-3.5 w-3.5 text-amber-400" />}
+                        {lead.email && <Mail className="h-3.5 w-3.5 text-amber-300" />}
                       </div>
 
                       <Badge
                         variant={selectedId === lead.id ? "default" : "outline"}
                         className={`text-[10px] font-mono ${
                           selectedId === lead.id
-                            ? "bg-indigo-500 text-indigo-950 font-bold"
+                            ? "bg-amber-400 text-slate-950 font-bold"
                             : "text-muted-foreground border-border"
                         }`}
                       >
@@ -249,7 +249,7 @@ export function Phase3Rank({
                         transition={{ delay: i * 0.03 }}
                         aria-selected={selectedId === lead.id}
                         className={`border-b border-border/40 cursor-pointer transition-colors ${
-                          selectedId === lead.id ? "bg-indigo-500/10" : "hover:bg-secondary/40"
+                          selectedId === lead.id ? "bg-amber-500/10" : "hover:bg-secondary/40"
                         }`}
                         onClick={() => setSelectedId(lead.id)}
                       >
@@ -274,10 +274,10 @@ export function Phase3Rank({
                                 initial={{ width: 0 }}
                                 animate={{ width: `${lead.score}%` }}
                                 transition={{ duration: 0.8, delay: i * 0.05, ease: "easeOut" }}
-                                className="h-full bg-gradient-to-r from-indigo-500 to-violet-400"
+                                className="h-full bg-gradient-to-r from-amber-400 to-orange-500"
                               />
                             </div>
-                            <span className="font-mono text-xs font-bold tabular-nums w-8 text-right text-indigo-400">
+                            <span className="font-mono text-xs font-bold tabular-nums w-8 text-right text-amber-300">
                               {lead.score}
                             </span>
                           </div>
@@ -287,7 +287,7 @@ export function Phase3Rank({
                         </TableCell>
                         <TableCell className="align-top pt-3.5">
                           {lead.audit.hasWebsite ? (
-                            <Badge variant="secondary" className="text-[10px] font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                            <Badge variant="secondary" className="text-[10px] font-mono bg-amber-500/10 text-amber-300 border border-amber-500/30">
                               {lead.audit.pageSpeedScore} PageSpeed
                             </Badge>
                           ) : (
@@ -306,7 +306,7 @@ export function Phase3Rank({
                             }}
                             className={`h-8 px-3 text-xs font-mono ${
                               selectedId === lead.id
-                                ? "bg-indigo-500 text-indigo-950 font-bold"
+                                ? "bg-amber-400 text-slate-950 font-bold"
                                 : "border-border/80 text-muted-foreground"
                             }`}
                           >

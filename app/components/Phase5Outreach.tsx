@@ -255,9 +255,9 @@ export function Phase5Outreach({
           )}
 
           {/* Pipeline Completion Banner */}
-          <Card className="glass-card border border-cyan-500/40 bg-cyan-500/5 rounded-2xl p-6">
+          <Card className="glass-card border border-amber-500/40 bg-amber-500/5 rounded-2xl p-6">
             <CardContent className="p-0 flex items-center gap-4">
-              <div className="h-12 w-12 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0">
+              <div className="h-12 w-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
                 <CheckCircle2 className="h-6 w-6" />
               </div>
               <div className="space-y-1">

@@ -111,7 +111,7 @@ export function Phase2Audit({
     >
       {/* Top Audit Stats Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-        <Card className="glass-card border border-cyan-500/30 rounded-2xl">
+        <Card className="glass-card border border-amber-500/30 rounded-2xl">
           <CardContent className="pt-5">
             <div className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground">
               Audited Leads
@@ -139,7 +139,7 @@ export function Phase2Audit({
             <div className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground">
               Avg PageSpeed
             </div>
-            <div className="font-display text-3xl font-bold tabular-nums mt-2 text-cyan-400">
+            <div className="font-display text-3xl font-bold tabular-nums mt-2 text-amber-300">
               {auditedCount
                 ? Math.round(
                     Object.values(audits).reduce((s, a) => s + a.pageSpeedScore, 0) / auditedCount
@@ -163,7 +163,7 @@ export function Phase2Audit({
       </div>
 
       {/* Audit Action Bar */}
-      <div className="glass-card rounded-2xl p-4 border border-cyan-500/30 mb-6 flex flex-wrap items-center justify-between gap-4">
+      <div className="glass-card rounded-2xl p-4 border border-amber-500/30 mb-6 flex flex-wrap items-center justify-between gap-4">
         <label className="flex items-center gap-3 cursor-pointer select-none font-mono text-xs">
           <Checkbox
             checked={allSelected}
@@ -182,7 +182,7 @@ export function Phase2Audit({
         <Button
           onClick={runAudit}
           disabled={running || selectedIds.size === 0}
-          className="h-10 px-5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-cyan-950 font-bold shadow-lg shadow-cyan-950/20"
+          className="h-10 px-5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold shadow-lg shadow-amber-950/20"
         >
           <Sparkles className="h-4 w-4 mr-2" />
           {running
@@ -224,7 +224,7 @@ export function Phase2Audit({
             >
               <Card
                 className={`glass-card h-full transition-all duration-200 border rounded-2xl ${
-                  isSelected ? "border-cyan-500/50 shadow-md shadow-cyan-950/20" : "border-border/50 hover:border-border"
+                  isSelected ? "border-amber-500/50 shadow-md shadow-amber-950/20" : "border-border/50 hover:border-border"
                 }`}
               >
                 <CardHeader className="pb-3">
@@ -260,12 +260,12 @@ export function Phase2Audit({
                       </span>
                     )}
                     {lead.whatsapp && (
-                      <span className="flex items-center gap-1 text-cyan-400">
+                      <span className="flex items-center gap-1 text-amber-400">
                         <MessageCircle className="h-3 w-3" /> WA
                       </span>
                     )}
                     {lead.website ? (
-                      <Badge variant="secondary" className="text-[10px] font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                      <Badge variant="secondary" className="text-[10px] font-mono bg-amber-500/10 text-amber-300 border border-amber-500/30">
                         <Globe className="h-2.5 w-2.5 mr-1" /> Has Site
                       </Badge>
                     ) : (
@@ -295,7 +295,7 @@ export function Phase2Audit({
                           <Badge
                             key={g}
                             variant="outline"
-                            className="text-[10px] font-mono text-cyan-300 border-cyan-500/30 bg-cyan-500/10"
+                            className="text-[10px] font-mono text-amber-300 border-amber-500/30 bg-amber-500/10"
                           >
                             {g}
                           </Badge>
@@ -332,7 +332,7 @@ function PageSpeedGauge({ score }: { score: number }) {
       ? "text-rose-400"
       : score < 70
       ? "text-amber-400"
-      : "text-cyan-400";
+      : "text-amber-300";
 
   const ring =
     score === 0
@@ -341,7 +341,7 @@ function PageSpeedGauge({ score }: { score: number }) {
       ? "stroke-rose-500"
       : score < 70
       ? "stroke-amber-400"
-      : "stroke-cyan-400";
+      : "stroke-amber-400";
 
   const circumference = 2 * Math.PI * 22;
   const offset = circumference - (score / 100) * circumference;

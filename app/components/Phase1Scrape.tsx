@@ -86,7 +86,7 @@ export function Phase1Scrape({
     >
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Scraper Parameters Form */}
-        <Card className="glass-card lg:col-span-1 border border-cyan-500/30 rounded-2xl shadow-xl">
+        <Card className="glass-card lg:col-span-1 border border-amber-500/30 rounded-2xl shadow-xl">
           <CardHeader className="border-b border-border/40 pb-4">
             <CardTitle className="text-base font-bold flex items-center gap-2">
               <Compass className="h-4 w-4 text-[color:var(--phase-discover)]" />
@@ -144,7 +144,7 @@ export function Phase1Scrape({
             <Button
               onClick={runScrape}
               disabled={loading}
-              className="w-full h-11 bg-gradient-to-r from-sky-400 via-cyan-500 to-blue-600 hover:from-sky-300 hover:to-blue-500 text-slate-950 font-bold shadow-lg shadow-cyan-950/40 active:scale-[0.98] transition-transform"
+              className="w-full h-11 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold shadow-lg shadow-amber-950/40 active:scale-[0.98] transition-transform"
             >
               {loading ? (
                 <>
@@ -167,7 +167,7 @@ export function Phase1Scrape({
         <Card className="glass-card lg:col-span-2 border border-border/60 rounded-2xl shadow-xl">
           <CardHeader className="border-b border-border/40 pb-4 flex flex-row items-center justify-between">
             <CardTitle className="text-base font-bold flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-cyan-400" />
+              <MapPin className="h-4 w-4 text-amber-400" />
               Geographic Intelligence Map
             </CardTitle>
             <span className="text-xs font-mono text-muted-foreground">
@@ -239,14 +239,14 @@ export function Phase1Scrape({
                         onMouseEnter={() => setActiveLeadId(l.id)}
                         onClick={() => setActiveLeadId(l.id)}
                         className={`border-b border-border/40 cursor-pointer transition-colors ${
-                          isSelected ? "bg-cyan-500/10" : "hover:bg-secondary/40"
+                          isSelected ? "bg-amber-500/10" : "hover:bg-secondary/40"
                         }`}
                       >
                         <TableCell className="font-mono text-xs text-muted-foreground">{i + 1}</TableCell>
                         <TableCell>
                           <div className="font-semibold text-sm text-foreground">{l.name}</div>
                           <div className="text-xs text-muted-foreground flex items-center gap-1 mt-0.5 font-mono">
-                            <MapPin className="h-3 w-3 text-cyan-400/80 shrink-0" /> {l.address}
+                            <MapPin className="h-3 w-3 text-amber-400/80 shrink-0" /> {l.address}
                           </div>
                         </TableCell>
                         <TableCell className="text-xs font-mono">
@@ -257,12 +257,12 @@ export function Phase1Scrape({
                               </span>
                             )}
                             {l.whatsapp && (
-                              <span className="flex items-center gap-1.5 text-cyan-400 font-semibold">
+                              <span className="flex items-center gap-1.5 text-amber-400 font-semibold">
                                 <MessageCircle className="h-3 w-3" /> WhatsApp
                               </span>
                             )}
                             {l.email && (
-                              <span className="flex items-center gap-1.5 text-indigo-400">
+                              <span className="flex items-center gap-1.5 text-amber-300">
                                 <Mail className="h-3 w-3" /> {l.email}
                               </span>
                             )}
@@ -277,7 +277,7 @@ export function Phase1Scrape({
                         </TableCell>
                         <TableCell>
                           {l.website ? (
-                            <Badge variant="secondary" className="text-xs font-mono bg-indigo-500/10 text-indigo-400 border border-indigo-500/30">
+                            <Badge variant="secondary" className="text-xs font-mono bg-amber-500/10 text-amber-300 border border-amber-500/30">
                               <Globe className="h-3 w-3 mr-1" /> Active Site
                             </Badge>
                           ) : (

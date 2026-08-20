@@ -57,7 +57,7 @@ export function AppShell({
   const [commandOpen, setCommandOpen] = useState(false);
 
   const navItems = [
-    { id: "overview", label: "Dashboard Overview", icon: LayoutDashboard, isOverview: true, color: "text-emerald-400" },
+    { id: "overview", label: "Dashboard Overview", icon: LayoutDashboard, isOverview: true, color: "text-cyan-400" },
     { id: 1, label: "1. Discover Leads", icon: MapPin, phase: 1, color: "text-[color:var(--phase-discover)]" },
     { id: 2, label: "2. Audit Engine", icon: ShieldAlert, phase: 2, color: "text-[color:var(--phase-audit)]" },
     { id: 3, label: "3. Rank Prospects", icon: Trophy, phase: 3, color: "text-[color:var(--phase-rank)]" },
@@ -147,7 +147,7 @@ export function AppShell({
                 }}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 group relative ${
                   isActive
-                    ? "bg-gradient-to-r from-emerald-500/20 to-teal-500/10 text-emerald-400 border border-emerald-500/30 shadow-md shadow-emerald-950/20"
+                    ? "bg-gradient-to-r from-cyan-500/20 to-blue-500/10 text-cyan-400 border border-cyan-500/30 shadow-md shadow-cyan-950/20"
                     : "text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground"
                 }`}
                 title={collapsed ? item.label : undefined}
@@ -162,10 +162,10 @@ export function AppShell({
                   <span className="flex-1 text-left truncate">{item.label}</span>
                 )}
                 {!collapsed && isCompleted && !isActive && (
-                  <span className="h-2 w-2 rounded-full bg-emerald-500/60" />
+                  <span className="h-2 w-2 rounded-full bg-cyan-400/60" />
                 )}
                 {collapsed && isActive && (
-                  <div className="absolute right-1 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-emerald-400" />
+                  <div className="absolute right-1 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-cyan-400" />
                 )}
               </button>
             );
@@ -182,7 +182,7 @@ export function AppShell({
                   claudeOk === null
                     ? "bg-amber-400 animate-pulse"
                     : claudeOk
-                    ? "bg-emerald-400 shadow-sm shadow-emerald-400"
+                    ? "bg-cyan-400 shadow-sm shadow-cyan-400"
                     : "bg-destructive"
                 }`}
               />
@@ -222,7 +222,7 @@ export function AppShell({
               onClick={() => setActiveTab("overview")}
               className={`text-sm font-medium transition-colors ${
                 activeTab === "overview"
-                  ? "text-emerald-400 font-semibold"
+                  ? "text-cyan-400 font-semibold"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -249,7 +249,7 @@ export function AppShell({
               </kbd>
             </button>
 
-            <div className="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono">
+            <div className="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono">
               <Zap className="h-3.5 w-3.5" />
               <span>Local AI Engine</span>
             </div>
@@ -257,7 +257,7 @@ export function AppShell({
             {user && (
               <div className="flex items-center gap-2 pl-2 border-l border-border/60">
                 <div className="flex items-center gap-2 px-2.5 py-1 rounded-xl bg-secondary/60 border border-border/50 text-xs font-mono">
-                  <div className="h-5 w-5 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-[10px] text-emerald-400 font-bold">
+                  <div className="h-5 w-5 rounded-full bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-[10px] text-cyan-400 font-bold">
                     {user.name.charAt(0).toUpperCase()}
                   </div>
                   <span className="hidden md:inline font-semibold text-foreground">{user.name}</span>
@@ -315,7 +315,7 @@ export function AppShell({
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between border-b border-sidebar-border/60 pb-3">
-                <div className="font-bold text-base gradient-text-emerald">Lead → Launch Studio</div>
+                <div className="font-bold text-base gradient-text-veev">Lead → Launch Studio</div>
                 <button onClick={() => setMobileMenuOpen(false)} className="text-muted-foreground">
                   <X className="h-5 w-5" />
                 </button>

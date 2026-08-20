@@ -201,7 +201,7 @@ export function Phase3Rank({
                     <div className="flex items-center justify-between pt-1">
                       <div className="flex gap-2">
                         {lead.phone && <Phone className="h-3.5 w-3.5 text-muted-foreground" />}
-                        {lead.whatsapp && <MessageCircle className="h-3.5 w-3.5 text-emerald-400" />}
+                        {lead.whatsapp && <MessageCircle className="h-3.5 w-3.5 text-cyan-400" />}
                         {lead.email && <Mail className="h-3.5 w-3.5 text-indigo-400" />}
                       </div>
 

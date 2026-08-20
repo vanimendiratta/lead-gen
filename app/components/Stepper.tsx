@@ -33,18 +33,18 @@ export function Stepper({ current, completed, onJump }: StepperProps) {
                 aria-current={isCurrent ? "step" : undefined}
                 className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-mono transition-all duration-200 border ${
                   isCurrent
-                    ? "bg-emerald-500/15 text-emerald-400 border-emerald-500/40 shadow-sm shadow-emerald-950/30"
+                    ? "bg-cyan-500/15 text-cyan-400 border-cyan-500/40 shadow-sm shadow-cyan-950/30"
                     : isDone
-                    ? "bg-secondary/60 text-emerald-300/80 border-emerald-500/20 hover:bg-secondary hover:text-emerald-300"
+                    ? "bg-secondary/60 text-cyan-300/80 border-cyan-500/20 hover:bg-secondary hover:text-cyan-300"
                     : "bg-secondary/30 text-muted-foreground border-border/40 hover:bg-secondary/60 hover:text-foreground"
                 }`}
               >
                 <div
                   className={`h-6 w-6 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
                     isCurrent
-                      ? "bg-emerald-500 text-emerald-950 font-bold"
+                      ? "bg-cyan-400 text-slate-950 font-bold"
                       : isDone
-                      ? "bg-emerald-500/20 text-emerald-400"
+                      ? "bg-cyan-500/20 text-cyan-400"
                       : "bg-border/60 text-muted-foreground"
                   }`}
                 >

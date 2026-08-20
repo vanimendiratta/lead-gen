@@ -55,7 +55,7 @@ export function OverviewDashboard({
       desc: "Extract local businesses from Google Maps with phone & coordinates.",
       icon: MapPin,
       accent: "text-[color:var(--phase-discover)]",
-      badgeBg: "bg-emerald-500/10 text-emerald-400 border-emerald-500/30",
+      badgeBg: "bg-cyan-500/10 text-cyan-400 border-cyan-500/30",
       status: completedPhases.has(1) ? "complete" : "pending",
       countLabel: `${leads.length} Leads Scraped`,
     },
@@ -66,7 +66,7 @@ export function OverviewDashboard({
       desc: "Audit PageSpeed scores, mobile UX, schema & monthly lost revenue.",
       icon: ShieldAlert,
       accent: "text-[color:var(--phase-audit)]",
-      badgeBg: "bg-cyan-500/10 text-cyan-400 border-cyan-500/30",
+      badgeBg: "bg-sky-500/10 text-sky-400 border-sky-500/30",
       status: completedPhases.has(2) ? "complete" : leads.length > 0 ? "ready" : "pending",
       countLabel: `${auditedCount} Audited`,
     },
@@ -77,7 +77,7 @@ export function OverviewDashboard({
       desc: "Claude scores leads 0-100 based on reachability & conversion intent.",
       icon: Trophy,
       accent: "text-[color:var(--phase-rank)]",
-      badgeBg: "bg-indigo-500/10 text-indigo-400 border-indigo-500/30",
+      badgeBg: "bg-blue-500/10 text-blue-400 border-blue-500/30",
       status: completedPhases.has(3) ? "complete" : auditedCount > 0 ? "ready" : "pending",
       countLabel: `${ranked.length} Ranked`,
     },
@@ -88,7 +88,7 @@ export function OverviewDashboard({
       desc: "Generate battle-tested prompts for Lovable, Bolt, or Claude Code.",
       icon: Wand2,
       accent: "text-[color:var(--phase-build)]",
-      badgeBg: "bg-blue-500/10 text-blue-400 border-blue-500/30",
+      badgeBg: "bg-indigo-500/10 text-indigo-400 border-indigo-500/30",
       status: completedPhases.has(4) ? "complete" : ranked.length > 0 ? "ready" : "pending",
       countLabel: selectedLead ? "Target Selected" : "Awaiting Selection",
     },
@@ -99,7 +99,7 @@ export function OverviewDashboard({
       desc: "Draft personalized WhatsApp, Email & IG pitch scripts in Hinglish.",
       icon: Send,
       accent: "text-[color:var(--phase-outreach)]",
-      badgeBg: "bg-amber-500/10 text-amber-400 border-amber-500/30",
+      badgeBg: "bg-teal-500/10 text-teal-400 border-teal-500/30",
       status: completedPhases.has(5) ? "complete" : selectedId ? "ready" : "pending",
       countLabel: selectedLead ? "Ready to Draft" : "Pending Selection",
     },
@@ -111,19 +111,19 @@ export function OverviewDashboard({
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        className="glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden border border-emerald-500/30 shadow-2xl shadow-emerald-950/20"
+        className="glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden border border-cyan-500/30 shadow-2xl shadow-cyan-950/20"
       >
-        <div className="absolute -right-16 -top-16 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none" />
-        <div className="absolute -left-16 -bottom-16 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl pointer-events-none" />
+        <div className="absolute -right-16 -top-16 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
+        <div className="absolute -left-16 -bottom-16 h-72 w-72 rounded-full bg-blue-600/10 blur-3xl pointer-events-none" />
 
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono">
               <Zap className="h-3.5 w-3.5" />
               <span>AI Growth Command Center</span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-              Your Pipeline, Powered by <span className="gradient-text-emerald">AI Intelligence.</span>
+              Your Pipeline, Powered by <span className="gradient-text-veev">AI Intelligence.</span>
             </h1>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
               Discover local businesses, diagnose website gaps, rank high-intent opportunities,
@@ -134,7 +134,7 @@ export function OverviewDashboard({
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <button
               onClick={() => onNavigatePhase(1)}
-              className="px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-emerald-950 font-bold text-xs font-mono shadow-lg shadow-emerald-950/30 transition-all duration-200 active:scale-95 flex items-center gap-2"
+              className="px-5 py-3 rounded-xl bg-gradient-to-r from-sky-400 via-cyan-500 to-blue-600 hover:from-sky-300 hover:to-blue-500 text-slate-950 font-bold text-xs font-mono shadow-lg shadow-cyan-950/40 transition-all duration-200 active:scale-95 flex items-center gap-2"
             >
               <span>{leads.length === 0 ? "Launch Scraper Pipeline" : "Continue Pipeline"}</span>
               <ArrowRight className="h-4 w-4" />
@@ -147,7 +147,7 @@ export function OverviewDashboard({
       <div className="glass-card rounded-2xl p-6 border border-border/60 space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Activity className="h-4 w-4 text-emerald-400" />
+            <Activity className="h-4 w-4 text-cyan-400" />
             <h2 className="text-sm font-mono uppercase tracking-wider text-foreground font-semibold">
               Growth Intelligence Workflow
             </h2>
@@ -170,9 +170,9 @@ export function OverviewDashboard({
                 onClick={() => onNavigatePhase(stage.phase)}
                 className={`p-3 rounded-xl border cursor-pointer transition-all duration-200 space-y-2 hover:-translate-y-0.5 ${
                   isDone
-                    ? "bg-emerald-500/10 border-emerald-500/40"
+                    ? "bg-cyan-500/10 border-cyan-500/40"
                     : isReady
-                    ? "bg-indigo-500/10 border-indigo-500/40"
+                    ? "bg-sky-500/10 border-sky-500/40"
                     : "bg-secondary/30 border-border/40 hover:border-border"
                 }`}
               >
@@ -197,19 +197,19 @@ export function OverviewDashboard({
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.05 }}
-          className="glass-card rounded-2xl p-5 border border-border/60 hover:border-emerald-500/40 transition-colors space-y-3"
+          className="glass-card rounded-2xl p-5 border border-border/60 hover:border-cyan-500/40 transition-colors space-y-3"
         >
           <div className="flex items-center justify-between">
             <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
               Total Leads Scraped
             </span>
-            <div className="h-8 w-8 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+            <div className="h-8 w-8 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
               <MapPin className="h-4 w-4" />
             </div>
           </div>
           <div className="font-display text-3xl font-bold tabular-nums">{leads.length}</div>
           <div className="flex items-center gap-3 text-xs text-muted-foreground font-mono">
-            <span className="flex items-center gap-1 text-emerald-400">
+            <span className="flex items-center gap-1 text-cyan-400">
               <Phone className="h-3 w-3" /> {leads.filter((l) => l.phone).length} Phones
             </span>
             <span>·</span>
@@ -295,7 +295,7 @@ export function OverviewDashboard({
             <div className="space-y-1">
               <div className="font-semibold text-sm truncate text-foreground">{topRanked.name}</div>
               <div className="flex items-center justify-between text-xs text-muted-foreground font-mono">
-                <span>Score: <strong className="text-emerald-400">{topRanked.score}/100</strong></span>
+                <span>Score: <strong className="text-cyan-400">{topRanked.score}/100</strong></span>
                 <span>₹{topRanked.audit.estLostRevenuePerMonth.toLocaleString("en-IN")}/mo</span>
               </div>
             </div>
@@ -329,9 +329,9 @@ export function OverviewDashboard({
                 onClick={() => onNavigatePhase(p.phase)}
                 className={`glass-card rounded-2xl p-6 cursor-pointer border transition-all duration-200 group relative flex flex-col justify-between hover:-translate-y-1 ${
                   isDone
-                    ? "border-emerald-500/40 hover:border-emerald-500/70"
+                    ? "border-cyan-500/40 hover:border-cyan-500/70"
                     : isReady
-                    ? "border-indigo-500/40 hover:border-indigo-500/70"
+                    ? "border-sky-500/40 hover:border-sky-500/70"
                     : "border-border/50 opacity-80 hover:opacity-100 hover:border-border"
                 }`}
               >
@@ -340,9 +340,9 @@ export function OverviewDashboard({
                     <div
                       className={`h-10 w-10 rounded-xl flex items-center justify-center ${
                         isDone
-                          ? "bg-emerald-500/20 text-emerald-400"
+                          ? "bg-cyan-500/20 text-cyan-400"
                           : isReady
-                          ? "bg-indigo-500/20 text-indigo-400"
+                          ? "bg-sky-500/20 text-sky-400"
                           : "bg-secondary text-muted-foreground"
                       }`}
                     >
@@ -350,11 +350,11 @@ export function OverviewDashboard({
                     </div>
 
                     {isDone ? (
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-mono border border-emerald-500/30">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-mono border border-cyan-500/30">
                         <CheckCircle2 className="h-3.5 w-3.5" /> Complete
                       </span>
                     ) : isReady ? (
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-mono border border-indigo-500/30">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-sky-500/10 text-sky-400 text-xs font-mono border border-sky-500/30">
                         <TrendingUp className="h-3.5 w-3.5" /> Ready
                       </span>
                     ) : (
@@ -365,7 +365,7 @@ export function OverviewDashboard({
                   </div>
 
                   <div>
-                    <h3 className="text-base font-bold text-foreground group-hover:text-emerald-400 transition-colors">
+                    <h3 className="text-base font-bold text-foreground group-hover:text-cyan-400 transition-colors">
                       {p.title}
                     </h3>
                     <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
@@ -376,7 +376,7 @@ export function OverviewDashboard({
 
                 <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-between text-xs font-mono">
                   <span className="text-muted-foreground">{p.countLabel}</span>
-                  <span className="text-emerald-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform font-bold">
+                  <span className="text-cyan-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform font-bold">
                     Open Phase <ChevronRight className="h-3.5 w-3.5" />
                   </span>
                 </div>

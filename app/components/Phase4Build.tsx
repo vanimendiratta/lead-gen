@@ -233,7 +233,7 @@ export function Phase4Build({
                 <div className="flex items-center gap-1.5">
                   <div className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
                   <div className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
-                  <div className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
+                  <div className="h-2.5 w-2.5 rounded-full bg-cyan-400/80" />
                 </div>
 
                 <div className="flex items-center gap-1.5 px-3 py-0.5 rounded-md bg-background/60 text-[10px] font-mono text-muted-foreground border border-border/40 max-w-xs truncate">

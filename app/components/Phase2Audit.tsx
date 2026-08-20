@@ -260,7 +260,7 @@ export function Phase2Audit({
                       </span>
                     )}
                     {lead.whatsapp && (
-                      <span className="flex items-center gap-1 text-emerald-400">
+                      <span className="flex items-center gap-1 text-cyan-400">
                         <MessageCircle className="h-3 w-3" /> WA
                       </span>
                     )}

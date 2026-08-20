@@ -42,15 +42,15 @@ export default function LeadMap({ leads, activeLeadId, onSelectLead }: LeadMapPr
                 click: () => onSelectLead && onSelectLead(l.id),
               }}
               pathOptions={{
-                color: isActive ? "#34d399" : "#10b981",
-                fillColor: isActive ? "#6ee7b7" : "#10b981",
+                color: isActive ? "#38bdf8" : "#00b4d8",
+                fillColor: isActive ? "#7dd3fc" : "#00b4d8",
                 fillOpacity: isActive ? 0.95 : 0.75,
                 weight: isActive ? 3 : 1.5,
               }}
             >
               <Tooltip className="custom-leaflet-tooltip font-mono text-xs font-medium">
                 <div>
-                  <strong className="text-emerald-400">{l.name}</strong>
+                  <strong className="text-cyan-400">{l.name}</strong>
                   <div className="text-[10px] text-muted-foreground">{l.category} · {l.rating}★</div>
                 </div>
               </Tooltip>

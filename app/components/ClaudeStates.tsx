@@ -9,15 +9,15 @@ export function ClaudeThinking({ label = "Claude AI is executing local reasoning
     <motion.div
       initial={{ opacity: 0, y: 5 }}
       animate={{ opacity: 1, y: 0 }}
-      className="glass-card rounded-2xl p-6 sm:p-8 border border-emerald-500/40 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left relative overflow-hidden shadow-2xl shadow-emerald-950/20"
+      className="glass-card rounded-2xl p-6 sm:p-8 border border-cyan-500/40 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left relative overflow-hidden shadow-2xl shadow-cyan-950/20"
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-indigo-500/10 to-transparent animate-pulse pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-transparent animate-pulse pointer-events-none" />
 
       {/* Multi-ring AI thinking orb */}
       <div className="relative h-16 w-16 shrink-0 flex items-center justify-center">
-        <div className="absolute inset-0 rounded-full border-2 border-dashed border-emerald-400 animate-spin-slow opacity-60" />
-        <div className="absolute inset-2 rounded-full border border-indigo-400 animate-ping opacity-30" />
-        <div className="h-10 w-10 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 text-emerald-950 flex items-center justify-center shadow-lg shadow-emerald-500/40 glow-emerald">
+        <div className="absolute inset-0 rounded-full border-2 border-dashed border-cyan-400 animate-spin-slow opacity-60" />
+        <div className="absolute inset-2 rounded-full border border-blue-400 animate-ping opacity-30" />
+        <div className="h-10 w-10 rounded-2xl bg-gradient-to-tr from-sky-400 via-cyan-500 to-blue-600 text-slate-950 flex items-center justify-center shadow-lg shadow-cyan-500/40 glow-cyan font-bold">
           <Cpu className="h-5 w-5 animate-pulse" />
         </div>
       </div>
@@ -68,15 +68,15 @@ export function ClaudeRequired({
       <div className="rounded-xl bg-background/80 border border-border p-4 space-y-3">
         <div className="text-xs font-mono uppercase tracking-wider text-muted-foreground">Quick Setup Steps:</div>
         <ol className="text-xs space-y-2 text-muted-foreground list-decimal list-inside font-mono">
-          <li>Install Claude Code: <code className="text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">npm i -g @anthropic-ai/claude-code</code></li>
-          <li>Run <code className="text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">claude</code> once in a terminal to authenticate.</li>
+          <li>Install Claude Code: <code className="text-cyan-400 bg-cyan-500/10 px-1.5 py-0.5 rounded">npm i -g @anthropic-ai/claude-code</code></li>
+          <li>Run <code className="text-cyan-400 bg-cyan-500/10 px-1.5 py-0.5 rounded">claude</code> once in a terminal to authenticate.</li>
           <li>Click <strong className="text-foreground">Retry Connection</strong> below.</li>
         </ol>
       </div>
 
       <div className="flex flex-wrap items-center gap-3">
         {onRetry && (
-          <Button onClick={onRetry} variant="default" className="bg-emerald-600 hover:bg-emerald-500 text-emerald-950 font-bold h-10 px-5">
+          <Button onClick={onRetry} variant="default" className="bg-gradient-to-r from-sky-400 via-cyan-500 to-blue-600 hover:from-sky-300 hover:to-blue-500 text-slate-950 font-bold h-10 px-5">
             <RefreshCw className="h-4 w-4 mr-2" /> Retry Connection
           </Button>
         )}

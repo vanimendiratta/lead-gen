@@ -57,7 +57,7 @@ export function AppShell({
   const [commandOpen, setCommandOpen] = useState(false);
 
   const navItems = [
-    { id: "overview", label: "Dashboard Overview", icon: LayoutDashboard, isOverview: true, color: "text-cyan-400" },
+    { id: "overview", label: "Dashboard Overview", icon: LayoutDashboard, isOverview: true, color: "text-amber-400" },
     { id: 1, label: "1. Discover Leads", icon: MapPin, phase: 1, color: "text-[color:var(--phase-discover)]" },
     { id: 2, label: "2. Audit Engine", icon: ShieldAlert, phase: 2, color: "text-[color:var(--phase-audit)]" },
     { id: 3, label: "3. Rank Prospects", icon: Trophy, phase: 3, color: "text-[color:var(--phase-rank)]" },

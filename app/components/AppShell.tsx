@@ -18,11 +18,14 @@ import {
   Zap,
   Menu,
   X,
+  LogOut,
+  User,
 } from "lucide-react";
 import { Stepper } from "./Stepper";
 import { ParticleBackground } from "./ParticleBackground";
 import { CommandPalette } from "./CommandPalette";
 import type { Lead } from "@/lib/types";
+import type { AuthUser } from "./AuthPage";
 
 export interface AppShellProps {
   currentPhase: number;
@@ -32,6 +35,8 @@ export interface AppShellProps {
   claudeOk: boolean | null;
   leads: Lead[];
   onPhaseChange: (phase: number) => void;
+  user?: AuthUser | null;
+  onLogout?: () => void;
   children: React.ReactNode;
 }
 
@@ -43,6 +48,8 @@ export function AppShell({
   claudeOk,
   leads,
   onPhaseChange,
+  user,
+  onLogout,
   children,
 }: AppShellProps) {
   const [collapsed, setCollapsed] = useState(false);
@@ -246,6 +253,26 @@ export function AppShell({
               <Zap className="h-3.5 w-3.5" />
               <span>Local AI Engine</span>
             </div>
+
+            {user && (
+              <div className="flex items-center gap-2 pl-2 border-l border-border/60">
+                <div className="flex items-center gap-2 px-2.5 py-1 rounded-xl bg-secondary/60 border border-border/50 text-xs font-mono">
+                  <div className="h-5 w-5 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-[10px] text-emerald-400 font-bold">
+                    {user.name.charAt(0).toUpperCase()}
+                  </div>
+                  <span className="hidden md:inline font-semibold text-foreground">{user.name}</span>
+                </div>
+                {onLogout && (
+                  <button
+                    onClick={onLogout}
+                    title="Sign Out"
+                    className="p-1.5 rounded-xl bg-secondary/60 hover:bg-rose-500/20 text-muted-foreground hover:text-rose-400 border border-border/50 transition-colors"
+                  >
+                    <LogOut className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
+            )}
           </div>
         </header>
 

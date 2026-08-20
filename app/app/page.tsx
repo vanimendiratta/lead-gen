@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { AppShell } from "@/components/AppShell";
+import { AuthPage, type AuthUser } from "@/components/AuthPage";
 import { OverviewDashboard } from "@/components/OverviewDashboard";
 import { Phase1Scrape } from "@/components/Phase1Scrape";
 import { Phase2Audit } from "@/components/Phase2Audit";
@@ -12,6 +13,8 @@ import { Phase5Outreach } from "@/components/Phase5Outreach";
 import type { Lead, AuditResult, RankedLead } from "@/lib/types";
 
 export default function Page() {
+  const [user, setUser] = useState<AuthUser | null>(null);
+  const [authChecked, setAuthChecked] = useState(false);
   const [activeTab, setActiveTab] = useState<"overview" | "phase">("overview");
   const [phase, setPhase] = useState(1);
   const [leads, setLeads] = useState<Lead[]>([]);
@@ -21,11 +24,27 @@ export default function Page() {
   const [claudeOk, setClaudeOk] = useState<boolean | null>(null);
 
   useEffect(() => {
+    try {
+      const stored = localStorage.getItem("lead_to_launch_user");
+      if (stored) {
+        setUser(JSON.parse(stored));
+      }
+    } catch (e) {
+      console.error("Failed to parse stored user session", e);
+    } finally {
+      setAuthChecked(true);
+    }
+
     fetch("/api/claude-status")
       .then((r) => r.json())
       .then((d) => setClaudeOk(!!d.installed))
       .catch(() => setClaudeOk(false));
   }, []);
+
+  function handleLogout() {
+    localStorage.removeItem("lead_to_launch_user");
+    setUser(null);
+  }
 
   const completedPhases = useMemo(() => {
     const s = new Set<number>();
@@ -42,8 +61,18 @@ export default function Page() {
     [ranked, selectedId]
   );
 
+  if (!authChecked) {
+    return null; // Prevents flash before checking localStorage session
+  }
+
+  if (!user) {
+    return <AuthPage onLogin={(u) => setUser(u)} />;
+  }
+
   return (
     <AppShell
+      user={user}
+      onLogout={handleLogout}
       currentPhase={phase}
       activeTab={activeTab}
       setActiveTab={setActiveTab}

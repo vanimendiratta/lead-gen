@@ -91,8 +91,8 @@ export function AppShell({
         {/* Sidebar Header / Logo */}
         <div className="h-16 flex items-center justify-between px-4 border-b border-sidebar-border/60">
           <div className="flex items-center gap-3 overflow-hidden">
-            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center shrink-0 shadow-lg shadow-emerald-900/30">
-              <Sparkles className="h-5 w-5 text-sidebar-primary-foreground" strokeWidth={2} />
+            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-cyan-400 via-sky-500 to-blue-700 flex items-center justify-center shrink-0 shadow-lg shadow-cyan-900/40">
+              <Sparkles className="h-5 w-5 text-slate-950 font-bold" strokeWidth={2} />
             </div>
             {!collapsed && (
               <motion.div
@@ -101,7 +101,7 @@ export function AppShell({
                 exit={{ opacity: 0 }}
                 className="flex flex-col whitespace-nowrap"
               >
-                <span className="font-display font-bold text-base tracking-tight gradient-text-emerald">
+                <span className="font-display font-bold text-base tracking-tight gradient-text-veev">
                   Lead → Launch
                 </span>
                 <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-mono">

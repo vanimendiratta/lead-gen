@@ -49,49 +49,56 @@
   --font-display: "Plus Jakarta Sans", "Inter", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  /* Deep Obsidian Command Center Hierarchy */
-  --background: oklch(0.10 0.015 250);
-  --foreground: oklch(0.96 0.005 250);
+  /* 
+   * VEEV Color Palette System
+   * - Veev Deep Royal Navy:  #0A2540 / oklch(0.12 0.06 255)
+   * - Veev Ocean Blue:       #0077B6 / oklch(0.55 0.18 235)
+   * - Veev Electric Cyan:    #00B4D8 / oklch(0.68 0.19 220)
+   * - Veev Ice Aqua:         #48CAE4 / oklch(0.78 0.16 200)
+   * - Veev Pure Star White:  #FFFFFF
+   */
+  --background: oklch(0.11 0.04 255);
+  --foreground: oklch(0.96 0.005 220);
 
-  --card: oklch(0.14 0.018 250);
-  --card-foreground: oklch(0.96 0.005 250);
+  --card: oklch(0.14 0.04 255);
+  --card-foreground: oklch(0.96 0.005 220);
 
-  --popover: oklch(0.14 0.018 250);
-  --popover-foreground: oklch(0.96 0.005 250);
+  --popover: oklch(0.14 0.04 255);
+  --popover-foreground: oklch(0.96 0.005 220);
 
-  --primary: oklch(0.68 0.18 160);               /* Electric Emerald */
-  --primary-foreground: oklch(0.10 0.02 160);
+  --primary: oklch(0.68 0.19 220);               /* Veev Electric Cyan */
+  --primary-foreground: oklch(0.10 0.05 255);
 
-  --secondary: oklch(0.18 0.022 250);
-  --secondary-foreground: oklch(0.92 0.01 250);
+  --secondary: oklch(0.18 0.04 250);
+  --secondary-foreground: oklch(0.92 0.01 220);
 
-  --muted: oklch(0.18 0.018 250);
-  --muted-foreground: oklch(0.62 0.02 250);
+  --muted: oklch(0.18 0.03 250);
+  --muted-foreground: oklch(0.64 0.03 230);
 
-  --accent: oklch(0.58 0.22 280);                /* Radiant Violet */
-  --accent-foreground: oklch(0.98 0.005 250);
+  --accent: oklch(0.78 0.16 200);                /* Veev Ice Aqua */
+  --accent-foreground: oklch(0.10 0.05 255);
 
   --destructive: oklch(0.62 0.20 25);            /* Coral Red */
 
-  --border: oklch(0.22 0.02 250 / 0.7);
-  --input: oklch(0.22 0.02 250 / 0.7);
-  --ring: oklch(0.68 0.18 160 / 0.5);
+  --border: oklch(0.24 0.05 240 / 0.7);
+  --input: oklch(0.24 0.05 240 / 0.7);
+  --ring: oklch(0.68 0.19 220 / 0.5);
 
-  --sidebar: oklch(0.08 0.015 250);
-  --sidebar-foreground: oklch(0.88 0.01 250);
-  --sidebar-primary: oklch(0.68 0.18 160);
-  --sidebar-primary-foreground: oklch(0.10 0.02 160);
-  --sidebar-accent: oklch(0.16 0.02 250);
-  --sidebar-accent-foreground: oklch(0.96 0.005 250);
-  --sidebar-border: oklch(0.18 0.018 250 / 0.7);
-  --sidebar-ring: oklch(0.68 0.18 160 / 0.5);
+  --sidebar: oklch(0.09 0.04 255);
+  --sidebar-foreground: oklch(0.90 0.01 220);
+  --sidebar-primary: oklch(0.68 0.19 220);
+  --sidebar-primary-foreground: oklch(0.10 0.05 255);
+  --sidebar-accent: oklch(0.16 0.04 250);
+  --sidebar-accent-foreground: oklch(0.96 0.005 220);
+  --sidebar-border: oklch(0.18 0.04 250 / 0.7);
+  --sidebar-ring: oklch(0.68 0.19 220 / 0.5);
 
-  /* Semantic Phase Accents */
-  --phase-discover: oklch(0.68 0.18 160);       /* Emerald/Teal */
-  --phase-audit: oklch(0.65 0.18 210);          /* Cyan/Blue */
-  --phase-rank: oklch(0.60 0.22 280);           /* Violet/Indigo */
-  --phase-build: oklch(0.58 0.22 260);          /* Electric Blue/Purple */
-  --phase-outreach: oklch(0.72 0.18 55);        /* Warm Amber/Coral */
+  /* Semantic Phase Accents based on VEEV Gradient Spectrum */
+  --phase-discover: oklch(0.78 0.16 200);       /* Ice Aqua Cyan */
+  --phase-audit: oklch(0.68 0.19 220);          /* Electric Ocean Blue */
+  --phase-rank: oklch(0.60 0.18 240);           /* Veev Royal Blue */
+  --phase-build: oklch(0.65 0.18 260);          /* Sapphire Indigo */
+  --phase-outreach: oklch(0.75 0.15 190);        /* Bright Sky Teal */
 
   --radius: 0.75rem;
 }
@@ -105,9 +112,9 @@
     @apply bg-background text-foreground min-h-screen antialiased selection:bg-primary/20 selection:text-primary;
     background-color: var(--background);
     background-image:
-      radial-gradient(ellipse at 50% 0%, oklch(0.22 0.05 270 / 0.20) 0%, transparent 65%),
-      radial-gradient(circle at 90% 25%, oklch(0.20 0.06 160 / 0.12) 0%, transparent 50%),
-      radial-gradient(circle at 10% 75%, oklch(0.18 0.06 55 / 0.10) 0%, transparent 50%);
+      radial-gradient(ellipse at 50% 0%, oklch(0.25 0.08 230 / 0.22) 0%, transparent 65%),
+      radial-gradient(circle at 90% 20%, oklch(0.22 0.08 210 / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 10% 80%, oklch(0.18 0.06 250 / 0.12) 0%, transparent 50%);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
@@ -130,11 +137,11 @@
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: oklch(0.25 0.02 250);
+    background: oklch(0.25 0.04 240);
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: oklch(0.35 0.02 250);
+    background: oklch(0.35 0.05 230);
   }
 }
 
@@ -142,52 +149,52 @@
 .bg-digital-mesh {
   background-size: 32px 32px;
   background-image:
-    linear-gradient(to right, oklch(0.30 0.02 250 / 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0.30 0.02 250 / 0.06) 1px, transparent 1px);
+    linear-gradient(to right, oklch(0.30 0.04 230 / 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.30 0.04 230 / 0.07) 1px, transparent 1px);
 }
 
 /* Glassmorphism & Ambient Lighting */
 .glass-panel {
-  background: oklch(0.13 0.018 250 / 0.75);
+  background: oklch(0.13 0.04 255 / 0.78);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid oklch(0.24 0.02 250 / 0.6);
+  border: 1px solid oklch(0.25 0.05 240 / 0.6);
 }
 
 .glass-card {
-  background: linear-gradient(135deg, oklch(0.16 0.02 250 / 0.85), oklch(0.12 0.015 250 / 0.70));
+  background: linear-gradient(135deg, oklch(0.16 0.04 250 / 0.88), oklch(0.12 0.03 255 / 0.75));
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid oklch(0.24 0.02 250 / 0.55);
+  border: 1px solid oklch(0.25 0.05 230 / 0.6);
 }
 
-.glow-emerald {
-  box-shadow: 0 0 25px -4px oklch(0.68 0.18 160 / 0.3);
+.glow-emerald, .glow-cyan {
+  box-shadow: 0 0 25px -4px oklch(0.68 0.19 220 / 0.35);
 }
 
-.glow-indigo {
-  box-shadow: 0 0 25px -4px oklch(0.58 0.22 280 / 0.3);
+.glow-indigo, .glow-blue {
+  box-shadow: 0 0 25px -4px oklch(0.55 0.18 235 / 0.35);
 }
 
 .glow-amber {
-  box-shadow: 0 0 25px -4px oklch(0.72 0.18 55 / 0.3);
+  box-shadow: 0 0 25px -4px oklch(0.78 0.16 200 / 0.35);
 }
 
-/* Gradient text accents */
-.gradient-text-emerald {
-  background: linear-gradient(135deg, oklch(0.98 0.005 250), oklch(0.72 0.18 160));
+/* VEEV Gradient Text Accents */
+.gradient-text-emerald, .gradient-text-veev {
+  background: linear-gradient(135deg, #ffffff 10%, #48CAE4 50%, #00B4D8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-text-indigo {
-  background: linear-gradient(135deg, oklch(0.98 0.005 250), oklch(0.65 0.22 280));
+  background: linear-gradient(135deg, #ffffff 10%, #00B4D8 50%, #0A2540 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-text-amber {
-  background: linear-gradient(135deg, oklch(0.98 0.005 250), oklch(0.78 0.18 55));
+  background: linear-gradient(135deg, #ffffff 10%, #48CAE4 60%, #0077B6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -208,11 +215,11 @@
 
 /* Leaflet Map custom tooltips */
 .custom-leaflet-tooltip {
-  background: oklch(0.14 0.02 250) !important;
-  color: oklch(0.96 0.005 250) !important;
-  border: 1px solid oklch(0.28 0.02 250) !important;
+  background: oklch(0.14 0.04 255) !important;
+  color: oklch(0.96 0.005 220) !important;
+  border: 1px solid oklch(0.28 0.05 230) !important;
   border-radius: 8px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
   padding: 4px 8px !important;
 }
 
